@@ -1,7 +1,6 @@
 /* Global Variables */
 // Create a new date instance dynamically with JS
-let d = new Date();
-let newDate = d.getMonth() + '.' + d.getDate() + '.' + d.getFullYear();
+var newDate = new Date().toLocaleDateString("en-US")
 
 // Personal API Key for OpenWeatherMap API
 const apiKey = 'f9c9b0545062a589752704f7909886d1';
@@ -39,7 +38,7 @@ function performAction(e) {
 
 const retrieveData = async (url, zip, Key) => {
 
-    const res = await fetch(url + zip + '&appid=' + Key)
+    const res = await fetch(url + zip + '&appid=' + Key + '&units=imperial')
     try {
 
         const data = await res.json();
@@ -54,4 +53,3 @@ const retrieveData = async (url, zip, Key) => {
 
 
 /* Function to POST data */
-

@@ -34,7 +34,8 @@ function performAction(e) {
 
 }
 
-/* Function to POST data */
+/* Function to GET Project Data */
+
 const retrieveData = async (url, zip, Key) => {
 
     const res = await fetch(url + zip + '&appid=' + Key)
@@ -49,5 +50,3 @@ const retrieveData = async (url, zip, Key) => {
         // appropriately handle the error
     }
 }
-
-/* Function to GET Project Data */
